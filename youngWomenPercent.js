@@ -10,12 +10,12 @@ var z = 'yw_percent',
 
 // jenks
 jenks = geocolor.jenks(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./ywPercent_jenks.geojson', JSON.stringify(jenks))
+fs.writeFileSync('./output/ywPercent_jenks.geojson', JSON.stringify(jenks))
 
 // quantiles
 quantiles = geocolor.quantiles(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./ywPercent_quantiles.geojson', JSON.stringify(quantiles))
+fs.writeFileSync('./output/ywPercent_quantiles.geojson', JSON.stringify(quantiles))
 
 // equal intervals
 equalIntervals = geocolor.equalIntervals(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./ywPercent_equalInterval.geojson', JSON.stringify(equalIntervals))
+fs.writeFileSync('./output/ywPercent_equalInterval.geojson', JSON.stringify(equalIntervals))
