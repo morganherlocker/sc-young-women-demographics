@@ -19,3 +19,7 @@ fs.writeFileSync('./output/ywPercent_quantiles.geojson', JSON.stringify(quantile
 // equal intervals
 equalIntervals = geocolor.equalIntervals(counties, z, numberOfBreaks, colors)
 fs.writeFileSync('./output/ywPercent_equalInterval.geojson', JSON.stringify(equalIntervals))
+
+// custom
+custom = geocolor.custom(counties, z, [0.0559,.0846,.0882,.0914,.0937,.0978,.1010,.1103,.1329], colors)
+fs.writeFileSync('./output/ywPercent_custom.geojson', JSON.stringify(custom))
