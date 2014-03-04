@@ -4,18 +4,18 @@ var geocolor = require('geocolor'),
 
 var counties = JSON.parse(fs.readFileSync('./yw-counties-simplified.json'))
 
-var z = 'TotalPop',
+var z = 'yw_percent',
     numberOfBreaks = 8,
     colors = ['white', 'red']
 
 // jenks
 jenks = geocolor.jenks(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./population_jenks.geojson', JSON.stringify(jenks))
+fs.writeFileSync('./ywPercent_jenks.geojson', JSON.stringify(jenks))
 
 // quantiles
 quantiles = geocolor.quantiles(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./population_quantiles.geojson', JSON.stringify(quantiles))
+fs.writeFileSync('./ywPercent_quantiles.geojson', JSON.stringify(quantiles))
 
 // equal intervals
 equalIntervals = geocolor.equalIntervals(counties, z, numberOfBreaks, colors)
-fs.writeFileSync('./population_equalInterval.geojson', JSON.stringify(equalIntervals))
+fs.writeFileSync('./ywPercent_equalInterval.geojson', JSON.stringify(equalIntervals))
