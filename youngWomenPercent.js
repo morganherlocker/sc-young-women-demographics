@@ -5,7 +5,7 @@ var geocolor = require('geocolor'),
 var counties = JSON.parse(fs.readFileSync('./yw-counties-simplified.json'))
 
 var z = 'yw_percent',
-    numberOfBreaks = 8,
+    numberOfBreaks = 5,
     colors = ['white', 'red']
 
 // jenks
@@ -21,5 +21,6 @@ equalIntervals = geocolor.equalIntervals(counties, z, numberOfBreaks, colors)
 fs.writeFileSync('./output/ywPercent_equalInterval.geojson', JSON.stringify(equalIntervals))
 
 // custom
-custom = geocolor.custom(counties, z, [0.0559,.0846,.0882,.0914,.0937,.0978,.1010,.1103,.1329], colors)
+//custom = geocolor.custom(counties, z, [0.0558,.0846,.0882,.0914,.0937,.0978,.1010,.1103,.1330], colors)
+custom = geocolor.custom(counties, z, [0.0558,.9103,.1330], colors)
 fs.writeFileSync('./output/ywPercent_custom.geojson', JSON.stringify(custom))
