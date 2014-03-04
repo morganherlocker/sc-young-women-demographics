@@ -6,7 +6,7 @@ var counties = JSON.parse(fs.readFileSync('./yw-counties-simplified.json'))
 
 var z = 'TotalPop',
     numberOfBreaks = 8,
-    colors = ['green', 'yellow', 'red']
+    colors = ['white', 'red']
 
 // jenks
 jenks = geocolor.jenks(counties, z, numberOfBreaks, colors)
